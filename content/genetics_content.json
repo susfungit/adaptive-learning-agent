@@ -1,0 +1,102 @@
+{
+  "dna_basics": {
+    "explanation": {
+      "beginner": "DNA is like an instruction manual for building and running your body. It's found in almost every cell and contains the code that determines your traits, from eye color to height.",
+      "intermediate": "DNA (deoxyribonucleic acid) is a double helix molecule made of nucleotides. Each nucleotide contains a sugar, phosphate, and one of four bases: Adenine (A), Thymine (T), Guanine (G), or Cytosine (C).",
+      "advanced": "DNA is a double-stranded helical polymer of nucleotides. The antiparallel strands are held together by hydrogen bonds between complementary base pairs (A-T with 2 bonds, G-C with 3 bonds), following Chargaff's rules."
+    },
+    "key_concepts": [
+      "DNA is made of nucleotides",
+      "Four bases: A, T, G, C",
+      "A pairs with T, G pairs with C",
+      "DNA forms a double helix shape"
+    ],
+    "analogies": [
+      "DNA is like a twisted ladder - the sides are sugar-phosphate backbones and the rungs are base pairs",
+      "Think of DNA as a recipe book - the letters (bases) spell out instructions for making proteins",
+      "DNA is like a zipper - it can split apart and each side can be used as a template"
+    ],
+    "real_world_examples": [
+      "DNA fingerprinting is used in crime scene investigations",
+      "Paternity tests compare DNA between parent and child",
+      "Genetic testing can reveal inherited disease risks"
+    ],
+    "common_misconceptions": [
+      "DNA is not the same as a gene - genes are specific sections of DNA",
+      "DNA doesn't directly make traits - it provides instructions that cells follow"
+    ]
+  },
+  "mendelian_inheritance": {
+    "explanation": {
+      "beginner": "You inherit traits from both parents. For each trait, you get one version (allele) from mom and one from dad. Some versions are dominant and will show even if you only have one copy, while recessive versions only show if you have two copies.",
+      "intermediate": "Gregor Mendel discovered that traits are inherited in discrete units (genes). Each organism has two alleles for each gene. Dominant alleles (uppercase, like B) mask recessive alleles (lowercase, like b). Genotype (BB, Bb, bb) determines phenotype (observable trait).",
+      "advanced": "Mendelian inheritance follows the Law of Segregation (allele pairs separate during gamete formation) and the Law of Independent Assortment (genes for different traits are inherited independently). This applies to single-gene traits with complete dominance."
+    },
+    "key_concepts": [
+      "Alleles are different versions of a gene",
+      "Dominant alleles mask recessive alleles",
+      "Genotype = genetic makeup (BB, Bb, bb)",
+      "Phenotype = observable trait",
+      "Homozygous = two same alleles (BB or bb)",
+      "Heterozygous = two different alleles (Bb)"
+    ],
+    "analogies": [
+      "Think of alleles like competing voices - the dominant one is louder and gets heard, but the recessive one is still there",
+      "Genotype is like a recipe, phenotype is the finished dish",
+      "Inheritance is like shuffling and dealing cards - each parent gives you half their deck"
+    ],
+    "real_world_examples": [
+      "Brown eyes (B) are dominant over blue eyes (b)",
+      "Free earlobes are dominant over attached earlobes",
+      "Widow's peak hairline is dominant over straight hairline"
+    ],
+    "common_misconceptions": [
+      "Dominant doesn't mean 'better' or 'more common'",
+      "Recessive traits aren't rare - blue eyes are recessive but common",
+      "Having a dominant allele doesn't mean all your children will have that trait"
+    ]
+  },
+  "punnett_squares": {
+    "explanation": {
+      "beginner": "A Punnett square is a simple chart that helps you predict what traits offspring might have. You put one parent's alleles on top and the other parent's on the side, then fill in the boxes to see all possible combinations.",
+      "intermediate": "Punnett squares are probability tools for predicting genotype and phenotype ratios in offspring. For a monohybrid cross (one trait), you create a 2x2 grid. Each box represents an equally likely outcome (25% probability).",
+      "advanced": "Punnett squares visually represent the product rule of probability. For dihybrid crosses (two traits), a 4x4 grid shows 16 equally probable outcomes. The classic 9:3:3:1 phenotype ratio emerges from independent assortment."
+    },
+    "key_concepts": [
+      "Each box represents a 25% chance (for 2x2 squares)",
+      "Parent alleles go on edges, offspring genotypes in boxes",
+      "Monohybrid cross = one trait (2x2 grid)",
+      "Dihybrid cross = two traits (4x4 grid)",
+      "Phenotype ratios can be calculated from the results"
+    ],
+    "analogies": [
+      "A Punnett square is like a multiplication table for genetics",
+      "Think of it as a 'what if' chart showing all possible babies",
+      "It's like flipping two coins and listing all outcomes (HH, HT, TH, TT)"
+    ],
+    "real_world_examples": [
+      "Predicting flower colors in garden plants",
+      "Calculating probability of inherited diseases",
+      "Understanding why siblings can look so different"
+    ],
+    "guiding_questions": [
+      "If both parents have brown eyes (Bb), can they have a blue-eyed child?",
+      "What happens when you cross a homozygous dominant (BB) with a homozygous recessive (bb)?",
+      "Why do we get a 3:1 ratio when crossing two heterozygous parents?",
+      "How would you figure out the genotype of a brown-eyed person?"
+    ],
+    "step_by_step": [
+      "1. Identify the alleles of each parent",
+      "2. Write one parent's alleles across the top",
+      "3. Write the other parent's alleles down the left side",
+      "4. Fill in each box by combining the alleles from that row and column",
+      "5. Count the genotypes and determine phenotypes",
+      "6. Calculate the ratios or percentages"
+    ],
+    "common_misconceptions": [
+      "The ratios are probabilities, not guarantees - a 75% chance doesn't mean 3 out of 4 children will have that trait",
+      "All four boxes are equally likely, even if some have the same genotype",
+      "The order of alleles in a genotype doesn't matter (Bb = bB)"
+    ]
+  }
+}

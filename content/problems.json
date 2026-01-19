@@ -1,0 +1,116 @@
+{
+  "punnett_squares": [
+    {
+      "id": "ps_001",
+      "difficulty": "easy",
+      "question": "In pea plants, purple flowers (P) are dominant over white flowers (p). If you cross two heterozygous purple plants (Pp x Pp), what percentage of offspring would you expect to have white flowers?",
+      "answer": "25%",
+      "acceptable_answers": ["25%", "25", "1/4", "one fourth", "one quarter", "0.25"],
+      "explanation": "When crossing Pp x Pp, the Punnett square gives us: PP, Pp, Pp, pp. Only pp (1 out of 4) will have white flowers, so 25%.",
+      "hints": [
+        "Draw a 2x2 Punnett square with P and p on each side",
+        "Remember, white flowers only appear when both alleles are recessive (pp)",
+        "Count how many boxes out of 4 have the pp genotype"
+      ],
+      "concept": "monohybrid_cross"
+    },
+    {
+      "id": "ps_002",
+      "difficulty": "easy",
+      "question": "A homozygous brown-eyed person (BB) has children with a blue-eyed person (bb). What will be the genotype of ALL their children?",
+      "answer": "Bb",
+      "acceptable_answers": ["Bb", "bB", "heterozygous"],
+      "explanation": "The BB parent can only give B alleles, and the bb parent can only give b alleles. Every child gets one B and one b, making them all Bb.",
+      "hints": [
+        "What alleles can the BB parent pass on?",
+        "What alleles can the bb parent pass on?",
+        "Combine one from each parent"
+      ],
+      "concept": "monohybrid_cross"
+    },
+    {
+      "id": "ps_003",
+      "difficulty": "medium",
+      "question": "Two brown-eyed parents have a blue-eyed child. What must the genotypes of both parents be? (Blue eyes are recessive)",
+      "answer": "Both parents must be Bb",
+      "acceptable_answers": ["Bb", "Bb and Bb", "both Bb", "heterozygous", "both heterozygous", "Bb x Bb"],
+      "explanation": "For a child to have blue eyes (bb), they must receive a 'b' allele from EACH parent. Since both parents have brown eyes, they must each have at least one B allele. Therefore, both must be Bb (heterozygous).",
+      "hints": [
+        "The blue-eyed child must be bb. Where did each 'b' come from?",
+        "If a parent were BB, could they pass on a 'b' allele?",
+        "Both parents have brown eyes, so they each need at least one B"
+      ],
+      "concept": "genotype_inference"
+    },
+    {
+      "id": "ps_004",
+      "difficulty": "medium",
+      "question": "In guinea pigs, black fur (B) is dominant over white fur (b). If a heterozygous black guinea pig is crossed with a white guinea pig, what is the probability of getting a white offspring?",
+      "answer": "50%",
+      "acceptable_answers": ["50%", "50", "1/2", "one half", "0.5", "half"],
+      "explanation": "Bb x bb gives us: Bb, Bb, bb, bb. That's 2 black (Bb) and 2 white (bb), so 50% chance of white.",
+      "hints": [
+        "Write out the genotypes: Bb and bb",
+        "The Bb parent can give B or b, but the bb parent can only give b",
+        "Set up the Punnett square and count the outcomes"
+      ],
+      "concept": "monohybrid_cross"
+    },
+    {
+      "id": "ps_005",
+      "difficulty": "hard",
+      "question": "In a genetics experiment, a tall plant (T is dominant) is crossed with a short plant. The offspring are 50% tall and 50% short. What were the genotypes of the parent plants?",
+      "answer": "Tt x tt",
+      "acceptable_answers": ["Tt x tt", "Tt and tt", "tt x Tt", "heterozygous tall and homozygous short"],
+      "explanation": "A 50:50 (1:1) ratio indicates a cross between a heterozygote (Tt) and a homozygous recessive (tt). If the tall parent were TT, all offspring would be tall. The 50% short offspring prove the tall parent must be Tt.",
+      "hints": [
+        "The short parent must be tt (homozygous recessive)",
+        "If the tall parent were TT, what would the offspring ratio be?",
+        "A 1:1 ratio is characteristic of what type of cross?"
+      ],
+      "concept": "genotype_inference"
+    },
+    {
+      "id": "ps_006",
+      "difficulty": "hard",
+      "question": "Two heterozygous parents (Bb) have 4 children. What is the probability that ALL FOUR children will have brown eyes?",
+      "answer": "About 31.6% or (3/4)^4",
+      "acceptable_answers": ["31.6%", "31.64%", "32%", "81/256", "(3/4)^4", "3/4 to the fourth power", "0.316", "approximately 32%", "about 32%", "roughly 32%"],
+      "explanation": "Each child has a 3/4 (75%) chance of brown eyes. For all four: (3/4)^4 = 81/256 = approximately 31.6%. This shows that probabilities multiply for independent events.",
+      "hints": [
+        "First, what's the probability of ONE child having brown eyes?",
+        "Each child is an independent event",
+        "For independent events, you multiply probabilities"
+      ],
+      "concept": "probability"
+    }
+  ],
+  "mendelian_inheritance": [
+    {
+      "id": "mi_001",
+      "difficulty": "easy",
+      "question": "A plant has the genotype Bb. Is this plant homozygous or heterozygous?",
+      "answer": "heterozygous",
+      "acceptable_answers": ["heterozygous", "hetero", "heterozygote"],
+      "explanation": "Heterozygous means having two different alleles for a gene. Since B and b are different, Bb is heterozygous. Homozygous would be BB or bb.",
+      "hints": [
+        "Look at the two letters - are they the same or different?",
+        "Homo means 'same', hetero means 'different'"
+      ],
+      "concept": "genotype_terminology"
+    },
+    {
+      "id": "mi_002",
+      "difficulty": "easy",
+      "question": "If brown eyes (B) are dominant over blue eyes (b), what phenotype (eye color) would a person with genotype Bb have?",
+      "answer": "brown eyes",
+      "acceptable_answers": ["brown", "brown eyes"],
+      "explanation": "Since B (brown) is dominant over b (blue), having even one B allele results in brown eyes. Only bb would have blue eyes.",
+      "hints": [
+        "Which allele is dominant?",
+        "Does the person have at least one dominant allele?"
+      ],
+      "concept": "dominant_recessive"
+    }
+  ]
+}

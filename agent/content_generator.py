@@ -389,6 +389,32 @@ Respond ONLY with valid JSON."""
                 "misconception": None,
             }
 
+    def generate_alternative_explanation(
+        self, question: str, subject: str, attempt_number: int
+    ) -> str:
+        """Generate an alternative explanation when learner is struggling."""
+        prompt = f"""A student is struggling with this question about {subject}:
+
+Question: {question}
+
+They've tried {attempt_number} times and still haven't gotten it right. 
+
+Provide a brief alternative explanation (2-3 sentences) that:
+1. Approaches the concept from a different angle
+2. Uses a simple analogy or example
+3. Breaks down the concept into smaller parts
+4. Is encouraging and supportive
+
+Respond with ONLY the explanation, nothing else."""
+
+        response = self.client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=200,
+            messages=[{"role": "user", "content": prompt}],
+        )
+
+        return response.content[0].text.strip()
+
     def clear_cache(self):
         """Clear the content cache."""
         self.cache = {}

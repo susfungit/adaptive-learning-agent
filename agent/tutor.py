@@ -13,11 +13,12 @@ from state.storage import Storage
 class DynamicTutor:
     """Dynamic tutoring agent that can teach any subject."""
 
-    def __init__(self, data_dir: str = "data/learners"):
+    def __init__(self, data_dir: str = "data/learners", max_attempts: int = 5):
         self.client = Anthropic()
         self.storage = Storage(data_dir)
         self.learner_manager = LearnerManager(self.storage)
         self.content_gen = ContentGenerator(self.client)
+        self.max_attempts = max_attempts  # Maximum attempts before showing answer
 
         # Session state
         self.profile: Optional[LearnerProfile] = None
@@ -35,6 +36,7 @@ class DynamicTutor:
         self.current_problem: Optional[dict] = None
         self.current_problem_index: int = 0
         self.hints_given: int = 0
+        self.attempts: int = 0  # Track attempts for current problem/question
 
     def start_session(self, learner_id: str, name: Optional[str] = None) -> str:
         """Start a tutoring session for a learner."""
@@ -372,6 +374,7 @@ What would you like to do?"""
 
         self.current_problem_index = 0
         self.hints_given = 0
+        self.attempts = 0  # Reset attempts for new practice session
 
         if not self.practice_problems:
             return "Let me generate some practice problems... Please try again in a moment."
@@ -417,6 +420,7 @@ Try again!"""
 
 {explanation}"""
 
+            self.attempts = 0  # Reset for next problem
             return response + "\n\n" + self._next_problem()
 
         # Evaluate the answer
@@ -442,26 +446,60 @@ Try again!"""
 
 {explanation}"""
 
+            self.attempts = 0  # Reset for next problem
             return response + "\n\n" + self._next_problem()
         else:
+            # Increment attempt counter
+            self.attempts += 1
+            
             self.session.record_problem(
                 self.current_problem.get("id", "p1"), user_input, False, "incorrect"
             )
 
+            # Check if max attempts reached
+            if self.attempts >= self.max_attempts:
+                explanation = self.current_problem.get("explanation", "")
+                answer = self.current_problem.get("answer", "")
+                
+                response = f"""You've tried {self.attempts} times. Let me explain the answer so we can move forward.
+
+The answer is: **{answer}**
+
+{explanation}"""
+                
+                self.attempts = 0  # Reset for next problem
+                return response + "\n\n" + self._next_problem()
+
+            # Generate a different explanation/guidance based on attempt number
             feedback = evaluation.get("feedback", "Not quite.")
             misconception = evaluation.get("misconception")
 
-            response = f"{feedback}"
-            if misconception:
-                response += f" {misconception}"
-
-            response += "\n\nTry again, or say **'hint'** for help!"
+            # Try to explain in a different way after a few attempts
+            if self.attempts >= 2:
+                # Generate alternative explanation
+                alternative_explanation = self.content_gen.generate_alternative_explanation(
+                    question=self.current_problem.get("question", ""),
+                    subject=self.subject,
+                    attempt_number=self.attempts
+                )
+                response = f"{feedback}"
+                if misconception:
+                    response += f" {misconception}"
+                response += f"\n\nLet me try explaining this differently: {alternative_explanation}"
+                response += f"\n\nYou have {self.max_attempts - self.attempts} more attempts. Try again, or say **'hint'** for help!"
+            else:
+                response = f"{feedback}"
+                if misconception:
+                    response += f" {misconception}"
+                response += f"\n\nTry again, or say **'hint'** for help!"
+            
             return response
 
     def _next_problem(self) -> str:
         """Move to the next practice problem."""
         self.current_problem_index += 1
         self.hints_given = 0
+        self.attempts = 0  # Reset attempts for new problem
 
         if self.current_problem_index >= len(self.practice_problems):
             # Summarize practice session
